@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajay Shankar — Senior Product Leader</title>
+<meta name="description" content="Ajay Shankar — Senior Product Leader. 20+ years building and scaling digital platforms, operating models, and AI-native products.">
+<link rel="icon" href="data:,">
+<style>
+  :root{
+    --navy:#101c2e;
+    --navy-2:#16283f;
+    --navy-3:#1f3350;
+    --cream:#f7f4ee;
+    --cream-2:#efe9de;
+    --ink:#1a2233;
+    --ink-soft:#4c5567;
+    --gold:#b08a4e;
+    --gold-soft:#dcc79a;
+    --line:#e3ddd0;
+    --white:#ffffff;
+    --radius:10px;
+    --maxw:1080px;
+    --serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  section{padding:96px 0;}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:400;margin:0;color:var(--navy);}
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:14px;
+    display:block;
+  }
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head h2{font-size:34px;line-height:1.25;}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,244,238,.9);
+    backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;}
+  .brand{font-family:var(--serif);font-size:19px;color:var(--navy);letter-spacing:.02em;}
+  .navlinks{display:flex;gap:30px;list-style:none;margin:0;padding:0;}
+  .navlinks a{font-size:13.5px;letter-spacing:.03em;color:var(--ink-soft);transition:color .2s;}
+  .navlinks a:hover, .navlinks a.active{color:var(--navy);}
+  .navtoggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .navtoggle span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;}
+
+  /* HERO */
+  #hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 65%,var(--navy-3) 100%);
+    color:var(--cream);
+    padding:88px 0 72px;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:56px;align-items:center;}
+  .hero-eyebrow{color:var(--gold-soft);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:18px;}
+  #hero h1{color:var(--white);font-size:46px;line-height:1.15;margin-bottom:10px;}
+  .hero-title{font-size:18px;color:var(--gold-soft);margin-bottom:22px;font-family:var(--sans);letter-spacing:.02em;}
+  .hero-tagline{font-size:16.5px;color:#cfd6e2;max-width:520px;margin-bottom:32px;}
+  .hero-photo{
+    width:220px;height:220px;border-radius:50%;object-fit:cover;
+    border:4px solid rgba(220,199,154,.35);
+    justify-self:center;
+  }
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:13px 24px;border-radius:999px;font-size:13.5px;
+    letter-spacing:.03em;font-weight:600;transition:all .2s;cursor:pointer;border:1px solid transparent;
+  }
+  .btn-gold{background:var(--gold);color:var(--navy);}
+  .btn-gold:hover{background:var(--gold-soft);}
+  .btn-ghost{border-color:rgba(255,255,255,.35);color:var(--cream);}
+  .btn-ghost:hover{border-color:var(--gold-soft);color:var(--gold-soft);}
+  .stat-strip{
+    margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);
+    border-top:1px solid rgba(255,255,255,.15);padding-top:32px;
+  }
+  .stat-strip div{text-align:left;}
+  .stat-num{font-family:var(--serif);font-size:30px;color:var(--gold-soft);}
+  .stat-label{font-size:12px;color:#aeb8c9;margin-top:4px;letter-spacing:.02em;}
+
+  /* ABOUT */
+  #about .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;}
+  #about p{color:var(--ink-soft);font-size:16px;margin:0 0 16px;}
+  .facts{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px;height:fit-content;}
+  .facts h4{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-family:var(--sans);font-weight:700;margin-bottom:6px;}
+  .fact-block{margin-bottom:20px;}
+  .fact-block:last-child{margin-bottom:0;}
+  .fact-block p{margin:0;font-size:14.5px;color:var(--ink);}
+  .fact-block span{display:block;font-size:13px;color:var(--ink-soft);}
+
+  /* EXPERIENCE */
+  #experience{background:var(--white);}
+  .exp-item{
+    display:grid;grid-template-columns:64px 1fr;gap:22px;
+    padding:28px 0;border-top:1px solid var(--line);
+  }
+  .exp-item:last-child{border-bottom:1px solid var(--line);}
+  .exp-logo{
+    width:56px;height:56px;border-radius:8px;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;background:var(--cream);overflow:hidden;
+  }
+  .exp-logo img{width:78%;height:78%;object-fit:contain;}
+  .exp-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px;}
+  .exp-head h3{font-size:19px;color:var(--navy);}
+  .exp-dates{font-size:13px;color:var(--gold);font-weight:600;white-space:nowrap;}
+  .exp-sub{font-size:13.5px;color:var(--ink-soft);margin-bottom:12px;font-style:italic;}
+  .exp-item ul{margin:0;padding-left:18px;}
+  .exp-item li{font-size:14.5px;color:var(--ink-soft);margin-bottom:7px;}
+  .exp-item li b{color:var(--ink);}
+
+  /* IMPACT */
+  .impact-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    margin-bottom:16px;overflow:hidden;
+  }
+  .impact-top{
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+    padding:22px 26px;cursor:pointer;
+  }
+  .impact-top-left{display:flex;align-items:center;gap:18px;}
+  .impact-tag{
+    font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);
+    font-weight:700;white-space:nowrap;
+  }
+  .impact-top h3{font-size:18px;color:var(--navy);}
+  .impact-stat{font-family:var(--serif);color:var(--gold);font-size:16px;white-space:nowrap;}
+  .impact-toggle{font-size:18px;color:var(--ink-soft);transition:transform .2s;}
+  .impact-card.open .impact-toggle{transform:rotate(180deg);}
+  .impact-body{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 26px;}
+  .impact-card.open .impact-body{padding-bottom:24px;}
+  .impact-body h5{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);margin:14px 0 6px;font-family:var(--sans);}
+  .impact-body p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+  /* AI PROJECTS */
+  #ai{background:linear-gradient(180deg,var(--cream) 0%, var(--cream-2) 100%);}
+  .ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px;}
+  .ai-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
+  .ai-card h3{font-size:20px;margin-bottom:8px;}
+  .ai-card p{font-size:14.5px;color:var(--ink-soft);margin-bottom:16px;}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+  .tag{
+    font-size:12px;background:var(--cream-2);color:var(--ink-soft);
+    padding:5px 12px;border-radius:999px;border:1px solid var(--line);
+  }
+  .ai-link{font-size:13.5px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--gold);padding-bottom:2px;}
+  .ai-link:hover{color:var(--gold);}
+  .ai-note{
+    background:var(--white);border:1px dashed var(--gold-soft);border-radius:var(--radius);
+    padding:20px 24px;font-size:14px;color:var(--ink-soft);
+  }
+  .ai-note b{color:var(--ink);}
+
+  /* SKILLS */
+  .skill-groups{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .skill-group h4{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);margin-bottom:12px;font-family:var(--sans);font-weight:700;}
+  .skill-group .tag-row{margin-bottom:0;}
+
+  /* EDUCATION */
+  #education{background:var(--white);}
+  .edu-item{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--line);}
+  .edu-item:last-of-type{border-bottom:1px solid var(--line);margin-bottom:36px;}
+  .edu-logo{width:52px;height:52px;border-radius:50%;overflow:hidden;border:1px solid var(--line);}
+  .edu-logo img{width:100%;height:100%;object-fit:cover;}
+  .edu-item h3{font-size:16.5px;color:var(--navy);}
+  .edu-item span{font-size:13px;color:var(--ink-soft);}
+  .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .cert-card{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;}
+  .cert-card p{margin:0;font-size:13.5px;font-weight:600;color:var(--navy);}
+  .cert-card span{font-size:12.5px;color:var(--ink-soft);}
+
+  /* CONTACT */
+  #contact{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);
+    color:var(--cream);text-align:center;
+  }
+  #contact h2{color:var(--white);font-size:34px;margin-bottom:14px;}
+  #contact p{color:#cfd6e2;max-width:540px;margin:0 auto 34px;font-size:15.5px;}
+  .contact-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+
+  footer{background:var(--navy);color:#8f9bb0;padding:26px 0;font-size:13px;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:#cfd6e2;}
+  footer a:hover{color:var(--gold-soft);}
+
+  @media(max-width:860px){
+    .navlinks{
+      position:fixed;top:64px;left:0;right:0;background:var(--cream);
+      flex-direction:column;padding:20px 28px;gap:18px;border-bottom:1px solid var(--line);
+      display:none;
+    }
+    .navlinks.open{display:flex;}
+    .navtoggle{display:block;}
+    .hero-grid{grid-template-columns:1fr;text-align:center;}
+    .hero-photo{order:-1;width:150px;height:150px;}
+    .hero-tagline{margin-left:auto;margin-right:auto;}
+    .btn-row{justify-content:center;}
+    .stat-strip{grid-template-columns:1fr 1fr;row-gap:24px;}
+    #about .wrap{grid-template-columns:1fr;}
+    .ai-grid{grid-template-columns:1fr;}
+    .skill-groups{grid-template-columns:1fr;}
+    .cert-grid{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+    #hero h1{font-size:34px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">Ajay Shankar</div>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#ai">AI Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="navtoggle" id="navtoggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-eyebrow">Senior Product Leader</span>
+        <h1>Ajay Shankar</h1>
+        <div class="hero-title">Strategy into Execution — Operating Models at Scale</div>
+        <p class="hero-tagline">20+ years turning product strategy into digital transformation at scale — building the operating model, operating rhythm, and multi-disciplinary organisation that makes delivery real.</p>
+        <div class="btn-row">
+          <a href="assets/Ajay-Shankar-Resume.pdf" class="btn btn-gold" download>Download Resume</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+        <div class="stat-strip">
+          <div><div class="stat-num">20+</div><div class="stat-label">Years Experience</div></div>
+          <div><div class="stat-num">325</div><div class="stat-label">Team Members Led</div></div>
+          <div><div class="stat-num">15</div><div class="stat-label">Countries Scaled</div></div>
+          <div><div class="stat-num">+183%</div><div class="stat-label">NPS Growth</div></div>
+        </div>
+      </div>
+      <img class="hero-photo" src="assets/ProfilePhoto.jpg" alt="Ajay Shankar">
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">01 — About</span>
+      <h2 style="font-size:30px;margin-bottom:22px;">Building the Operating Model Behind the Experience</h2>
+      <p>Senior product leader with 20+ years building and scaling digital platforms for a global consumer education business. Most recently owned the roadmap for a Salesforce-based operating platform serving 100,000+ annual customer journeys across 15 countries — leading the full legacy-to-SaaS migration: 5 phases, 38 sites, 18 months, with the operating model and rollout sequencing built from scratch.</p>
+      <p>Background spans hands-on delivery — SQL, data migration, dashboards — up through executive stakeholder alignment at the Salesforce World Tour and annual management summits. Comfortable trading off competing priorities in global, multi-market environments, with a consistently data-informed approach to sequencing and defining success.</p>
+      <p>Outside the core role, personally designs and ships AI-native products end to end — see AI Projects below.</p>
+    </div>
+    <div class="facts">
+      <div class="fact-block">
+        <h4>Education</h4>
+        <p>MBA, INSEAD</p><span>Fontainebleau, France · 2006</span>
+        <p style="margin-top:8px;">B.E. Mechanical Engineering</p><span>Sri Venkateswara College of Engineering · 2001</span>
+      </div>
+      <div class="fact-block">
+        <h4>Languages</h4>
+        <p>English (Native) · German (B1) · French (A1)</p>
+      </div>
+      <div class="fact-block">
+        <h4>Location</h4>
+        <p>Zurich, Switzerland</p><span>Swiss Resident (C-Permit)</span>
+      </div>
+      <div class="fact-block">
+        <h4>Certified</h4>
+        <p>Certified Scrum Product Owner (CSPO)</p>
+        <p style="margin-top:6px;">Vibe Coding — Cursor AI &amp; Claude Code</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">02 — Experience</span>
+      <h2>Where I've Built and Scaled</h2>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-logo"><img src="assets/logo-ef.png" alt="EF Education First"></div>
+      <div>
+        <div class="exp-head"><h3>Senior Product Manager</h3><span class="exp-dates">Mar 2023 – Mar 2026</span></div>
+        <div class="exp-sub">EF Education First · Zurich, Switzerland</div>
+        <ul>
+          <li><b>Strategy into Execution:</b> Owned the product roadmap for EF's Operations platform — spanning modules including Accommodation (Atlantis Properties) and Logistics (case management, customer onboarding); built the operating rhythm for product planning and prioritization across 100,000+ annual customer journeys.</li>
+          <li><b>Revenue-Focused Alignment:</b> Aligned cross-functional value streams (Design, Sales, Engineering, Marketing) to secure executive team buy-in and deliver a real-time inventory tool — opening a new revenue channel and laying the foundation for dynamic pricing.</li>
+          <li><b>Execution Strategy:</b> Developed a 5-phase, 38-site, 15-country, 18-month rollout strategy, sequencing features and locations against organisational readiness.</li>
+          <li><b>Hands-On Building:</b> Wrote and executed SQL scripts for legacy-to-cloud data migration; independently designed, built and shipped an AI-native app for the Football World Cup with 70+ live users.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-logo"><img src="assets/logo-ef.png" alt="EF Education First"></div>
+      <div>
+        <div class="exp-head"><h3>Product Owner — Operations Systems</h3><span class="exp-dates">Jan 2019 – Mar 2023</span></div>
+        <div class="exp-sub">EF Education First · Zurich, Switzerland</div>
+        <ul>
+          <li><b>Stakeholder Management:</b> Built ambassador programmes and ran continuous user insight and discovery cycles; applied outcome-driven prioritization aligned to organisational goals — drove NPS +183% and cut onboarding time by 60%.</li>
+          <li><b>Communication:</b> Presented at the Salesforce World Tour and annual management summits, running feature previews and building stakeholder alignment across Sales, Operations, Design and Engineering.</li>
+          <li><b>Data-Informed Product Work:</b> Owned product data, metrics and reporting; built actionable dashboards for business and process health, lifting efficiency by 24%.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-logo"><img src="assets/logo-ef.png" alt="EF Education First"></div>
+      <div>
+        <div class="exp-head"><h3>Project Manager / Operations Manager / Director — Worldwide IT Support</h3><span class="exp-dates">Jan 2007 – Dec 2018</span></div>
+        <div class="exp-sub">EF Education First · Bengaluru, India / Zurich, Switzerland</div>
+        <ul>
+          <li><b>Organisation Building:</b> Grew the multi-disciplinary technology organisation from 130 to 325 professionals; established operating procedures, response standards and coaching frameworks across Engineering, Support and Quality — won "Best Service Department" (user vote) four consecutive years.</li>
+          <li><b>Operations &amp; Scale:</b> Led a 40-person team across 190 global locations; managed a €1.5mn budget and vendor contracts; sustained 99.9% uptime through a disciplined operating model.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-logo"><img src="assets/logo-techmahindra.png" alt="Tech Mahindra"></div>
+      <div>
+        <div class="exp-head"><h3>Senior Systems Analyst</h3><span class="exp-dates">Jun 2001 – Nov 2005</span></div>
+        <div class="exp-sub">Satyam Computer Services Pvt. Ltd. (now Tech Mahindra) · Chennai / Kuala Lumpur, Malaysia / Redmond, WA, USA</div>
+        <ul>
+          <li><b>Hands-On Delivery &amp; Stakeholder Management:</b> Directed the build and launch of Malaysia's first national digital health platform (Ministry of Health, 125+ clinics) across a matrixed, cross-functional organisation; managed testing and delivery for Microsoft's Certified Professional programme; awarded double promotion for performance.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">03 — Selected Impact</span>
+      <h2>Problems, Approach, and What Changed</h2>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-top" onclick="toggleCard(this)">
+        <div class="impact-top-left"><span class="impact-tag">Platform Migration</span><h3>Legacy-to-Cloud Migration &amp; Operating Model at Scale</h3></div>
+        <div style="display:flex;align-items:center;gap:16px;"><span class="impact-stat">18 months</span><span class="impact-toggle">▾</span></div>
+      </div>
+      <div class="impact-body">
+        <h5>Problem</h5><p>EF's 15-year-old legacy platform had no governance model capable of coordinating major change across a fragmented, multi-country operation — every rollout risked inconsistent adoption and disrupted local workflows.</p>
+        <h5>Approach</h5><p>Designed and led a 5-phase, 18-month rollout across 15 countries and 38 sites — sequencing locations and power users against organisational readiness, and personally writing the SQL scripts used to migrate two decades of legacy data onto the new Salesforce-based platform.</p>
+        <h5>Impact</h5><p>100,000+ annual customer journeys now run on the new operating model, delivered with zero critical post-launch issues and 99.9% uptime sustained after go-live.</p>
+      </div>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-top" onclick="toggleCard(this)">
+        <div class="impact-top-left"><span class="impact-tag">Org Growth</span><h3>Scaling the Technology Organisation</h3></div>
+        <div style="display:flex;align-items:center;gap:16px;"><span class="impact-stat">130 → 325</span><span class="impact-toggle">▾</span></div>
+      </div>
+      <div class="impact-body">
+        <h5>Problem</h5><p>The technology function needed to scale headcount and capability to support a fast-growing, multi-market operation without letting delivery quality slip.</p>
+        <h5>Approach</h5><p>Built hiring, coaching and operating-standard frameworks across Engineering, Support and Quality, growing the team responsibly against a $1.5mn budget while instituting response and resolution standards.</p>
+        <h5>Impact</h5><p>Organisation grew from 130 to 325 staff while sustaining 99.9% uptime across 190 locations, and winning "Best Service Department" (user vote) four years running.</p>
+      </div>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-top" onclick="toggleCard(this)">
+        <div class="impact-top-left"><span class="impact-tag">User Insight</span><h3>NPS Turnaround Through Evidence-Based Prioritisation</h3></div>
+        <div style="display:flex;align-items:center;gap:16px;"><span class="impact-stat">+183% NPS</span><span class="impact-toggle">▾</span></div>
+      </div>
+      <div class="impact-body">
+        <h5>Problem</h5><p>Product decisions were being made without a reliable read on user sentiment, and inconsistent onboarding was suppressing satisfaction across markets.</p>
+        <h5>Approach</h5><p>Built an ambassador-led user discovery practice and tied prioritisation directly to organisation-wide outcome metrics rather than ad-hoc feature requests, backed by dashboards the team could trust.</p>
+        <h5>Impact</h5><p>NPS rose 183% (16 → 45), OSAT improved 15% (4.0 → 4.5), and onboarding time fell by roughly 60%.</p>
+      </div>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-top" onclick="toggleCard(this)">
+        <div class="impact-top-left"><span class="impact-tag">Revenue</span><h3>Real-Time Inventory &amp; Executive Alignment</h3></div>
+        <div style="display:flex;align-items:center;gap:16px;"><span class="impact-stat">New Channel</span><span class="impact-toggle">▾</span></div>
+      </div>
+      <div class="impact-body">
+        <h5>Problem</h5><p>A new real-time inventory capability needed buy-in across Design, Sales, Engineering and Marketing before it could open a new revenue channel — and competing priorities made consensus hard to reach.</p>
+        <h5>Approach</h5><p>Presented the case at the Salesforce World Tour and annual management summits, running live feature previews to build early conviction and surface objections before they became blockers.</p>
+        <h5>Impact</h5><p>Secured cross-functional executive buy-in and shipped the tool — opening a new revenue channel and laying the foundation for dynamic pricing.</p>
+      </div>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-top" onclick="toggleCard(this)">
+        <div class="impact-top-left"><span class="impact-tag">0-to-1 Launch</span><h3>Malaysia's First National Digital Health Platform</h3></div>
+        <div style="display:flex;align-items:center;gap:16px;"><span class="impact-stat">125+ Clinics</span><span class="impact-toggle">▾</span></div>
+      </div>
+      <div class="impact-body">
+        <h5>Problem</h5><p>Malaysia's Ministry of Health needed its first centralised, national-scale digital health platform — with no existing system, playbook, or precedent to build from.</p>
+        <h5>Approach</h5><p>Directed the 0-to-1 build and launch across a matrixed, cross-functional organisation, working directly with clinicians and end users to manage testing and validation of high-assurance data.</p>
+        <h5>Impact</h5><p>Launched the platform live across 125+ clinics nationwide — Malaysia's first system of its kind — and was awarded a double promotion for the delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ai">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">04 — AI Projects</span>
+      <h2>Personally Designed, Built, and Shipped</h2>
+    </div>
+    <div class="ai-grid">
+      <div class="ai-card">
+        <h3>World Cup Predictor</h3>
+        <p>An AI-powered football prediction web app — designed, built and shipped end-to-end: Claude Code for development, Figma Make for generative prototyping, Vercel for deployment. 70+ active users.</p>
+        <div class="tag-row"><span class="tag">Claude Code</span><span class="tag">Figma Make</span><span class="tag">Vercel</span></div>
+        <a class="ai-link" href="https://fwc26-predictor.vercel.app" target="_blank" rel="noopener">Visit Live App →</a>
+      </div>
+      <div class="ai-card">
+        <h3>Calm Chore</h3>
+        <p>A family chore and task-management app, built using LLM-driven workflows and Claude Code — exploring AI-native product design for everyday household routines.</p>
+        <div class="tag-row"><span class="tag">Claude Code</span><span class="tag">LLM Workflows</span><span class="tag">Product Design</span></div>
+        <a class="ai-link" href="https://calm-chore.vercel.app" target="_blank" rel="noopener">Visit Live App →</a>
+      </div>
+    </div>
+    <div class="ai-note">
+      <b>AI in the day job, too:</b> re-engineered 20 years of EF's legacy operational data into a clean, validated, LLM-ready foundation — enabling Salesforce Agentforce / Einstein AI deployment readiness, automated case-routing workflows, and self-service analytics for frontline managers. Uses LLM tools (Claude, ChatGPT, Gemini) for product discovery and rapid prototyping alongside the shipped apps above.
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">05 — Skills</span>
+      <h2>Tools &amp; Capabilities</h2>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h4>Product Leadership</h4>
+        <div class="tag-row"><span class="tag">Operating Model Design</span><span class="tag">Strategy into Execution</span><span class="tag">Multi-Quarter Roadmap</span><span class="tag">Prioritisation &amp; Tradeoffs</span><span class="tag">Sequencing</span><span class="tag">Product Operations</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>AI &amp; Automation</h4>
+        <div class="tag-row"><span class="tag">Claude Code</span><span class="tag">Cursor AI</span><span class="tag">LLM Workflow Automation</span><span class="tag">Agentforce Readiness</span><span class="tag">Generative Prototyping (Figma Make)</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>User &amp; Discovery</h4>
+        <div class="tag-row"><span class="tag">User Insight &amp; Discovery</span><span class="tag">Ambassador Programmes</span><span class="tag">NPS / OSAT</span><span class="tag">A/B Testing</span><span class="tag">Data-Informed Decisions</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Hands-On &amp; Data</h4>
+        <div class="tag-row"><span class="tag">SQL &amp; Data Migration</span><span class="tag">Power BI</span><span class="tag">CRM Analytics</span><span class="tag">Agile (CSPO)</span><span class="tag">Jira &amp; Confluence</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Multi-Disciplinary Leadership</h4>
+        <div class="tag-row"><span class="tag">Cross-Functional Alignment</span><span class="tag">Stakeholder Management</span><span class="tag">Executive Communication</span><span class="tag">Coaching &amp; Career Pathways</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Platform &amp; Scale</h4>
+        <div class="tag-row"><span class="tag">Global Multi-Market Rollouts</span><span class="tag">Localisation</span><span class="tag">Salesforce (Experience / Sales / Service Cloud)</span><span class="tag">Go-to-Market</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">06 — Education &amp; Certifications</span>
+      <h2>Academic Background</h2>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-logo"><img src="assets/logo-insead.png" alt="INSEAD"></div>
+      <div><h3>Master of Business Administration</h3><span>INSEAD · Fontainebleau, France · Jan – Dec 2006</span></div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-logo"><img src="assets/logo-svce.png" alt="Sri Venkateswara College of Engineering"></div>
+      <div><h3>B.E. in Mechanical Engineering</h3><span>Sri Venkateswara College of Engineering, University of Madras · Chennai, India · Jun 1997 – Apr 2001</span></div>
+    </div>
+
+    <div class="cert-grid">
+      <div class="cert-card"><p>Certified Scrum Product Owner (CSPO)</p><span>Scrum Alliance · 2025 – 2028</span></div>
+      <div class="cert-card"><p>Vibe Coding with Cursor AI</p><span>Coursera · 2026</span></div>
+      <div class="cert-card"><p>Vibe Coding with Claude Code</p><span>Coursera · 2026</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--gold-soft);">07 — Contact</span>
+    <h2>Let's Talk</h2>
+    <p>Open to senior product leadership roles across Tech, EdTech, SaaS, and AI-enabled platforms — where operating models, execution discipline, and hands-on product depth make the difference.</p>
+    <div class="contact-row">
+      <a class="btn btn-gold" href="mailto:ajay.shankar@insead.edu">ajay.shankar@insead.edu</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/ajay-shankar-prodldr/" target="_blank" rel="noopener">LinkedIn →</a>
+      <a class="btn btn-ghost" href="assets/Ajay-Shankar-Resume.pdf" download>Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Ajay Shankar © 2026 · Zurich, Switzerland</div>
+    <div><a href="mailto:ajay.shankar@insead.edu">Email</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/ajay-shankar-prodldr/" target="_blank" rel="noopener">LinkedIn</a></div>
+  </div>
+</footer>
+
+<script>
+  const navtoggle = document.getElementById('navtoggle');
+  const navlinks = document.getElementById('navlinks');
+  navtoggle.addEventListener('click', () => navlinks.classList.toggle('open'));
+  navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navlinks.classList.remove('open')));
+
+  function toggleCard(el){
+    const card = el.parentElement;
+    const body = card.querySelector('.impact-body');
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.impact-card.open').forEach(c => {
+      c.classList.remove('open');
+      c.querySelector('.impact-body').style.maxHeight = null;
+    });
+    if(!isOpen){
+      card.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 40 + 'px';
+    }
+  }
+
+  // scrollspy
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.navlinks a');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.navlinks a[href="#' + entry.target.id + '"]');
+        if(active) active.classList.add('active');
+      }
+    });
+  }, {rootMargin: '-40% 0px -55% 0px'});
+  sections.forEach(s => obs.observe(s));
+</script>
+
+</body>
+</html>
