@@ -159,6 +159,8 @@
   .ai-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
   .ai-card h3{font-size:20px;margin-bottom:8px;}
   .ai-card p{font-size:14.5px;color:var(--ink-soft);margin-bottom:16px;}
+  .ai-card p.ai-meta{font-size:13px;margin-bottom:8px;}
+  .ai-card p.ai-meta b{color:var(--ink);}
   .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
   .tag{
     font-size:12px;background:var(--cream-2);color:var(--ink-soft);
@@ -234,8 +236,8 @@
     <ul class="navlinks" id="navlinks">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#impact">Impact</a></li>
       <li><a href="#ai">AI Projects</a></li>
+      <li><a href="#impact">Impact</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -360,10 +362,42 @@
   </div>
 </section>
 
+<section id="ai">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">03 — AI Projects</span>
+      <h2>Personally Designed, Built, and Shipped</h2>
+      <p style="margin-top:10px;color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.02em;">April 2026 – Aug 2026</p>
+    </div>
+    <div class="ai-grid">
+      <div class="ai-card">
+        <h3>FIFA World Cup Predictor</h3>
+        <p>A full-stack web application for friends and family to compete on World Cup match predictions in real time.</p>
+        <p>Built a custom prediction platform where users submit score predictions for all 80 matches — group stage through the Final — as well as forecasting which teams advance from each group. A live scoring engine awards points based on prediction accuracy (exact score, correct winner, correct penalty outcome), with results updating automatically as matches complete.</p>
+        <p>Key features: circular SVG knockout bracket with live team propagation, per-match points breakdown with group and knockout sub-totals, real-time leaderboard, and an admin sync pipeline that pulls live scores from the football-data.org API and handles regular time, extra time, and penalty shootout edge cases correctly.</p>
+        <p class="ai-meta"><b>Stack:</b> React + Vite + Tailwind CSS · Supabase (PostgreSQL) · Vercel serverless functions · football-data.org API</p>
+        <p class="ai-meta"><b>Skills:</b> Figma Make, Claude Code Subagents</p>
+        <a class="ai-link" href="https://fwc26-predictor.vercel.app" target="_blank" rel="noopener">Visit Live App →</a>
+      </div>
+      <div class="ai-card">
+        <h3>Calm Chore</h3>
+        <p>A gamified chores app for families, built end-to-end (product design, database, and full-stack development) as a solo project. Parents create and schedule chores with flexible recurrence, and kids complete them through their own login to earn points, build streaks, and unlock tiers — with a points-redemption system that guides how and when they can cash in for rewards like screen time, outings, or purchases.</p>
+        <p>Built with Next.js (App Router), TypeScript, and Supabase (Postgres with Row Level Security), deployed on Vercel as an installable PWA. Features include a shared family chore calendar, photo-verified task submission and parent approval, streak/freeze mechanics, a cross-family chore ideas library with semantic search (OpenAI embeddings + pgvector) so parents can browse by intent rather than exact keywords, parent-managed logins for younger kids, and real-time in-app and push notifications with home screen badging.</p>
+        <p>Designed around COPPA-conscious data handling for a product built for children, with role-based access (parent vs. child) enforced at the database level via RLS rather than application logic alone.</p>
+        <p class="ai-meta"><b>Skills:</b> TypeScript, Next.js, Progressive Web Applications (PWAs), Retrieval-Augmented Generation (RAG), OpenAI API, PostgreSQL, Supabase</p>
+        <a class="ai-link" href="https://calm-chore.vercel.app" target="_blank" rel="noopener">Visit Live App →</a>
+      </div>
+    </div>
+    <div class="ai-note">
+      <b>AI in the day job, too:</b> re-engineered 20 years of EF's legacy operational data into a clean, validated, LLM-ready foundation — enabling Salesforce Agentforce / Einstein AI deployment readiness, automated case-routing workflows, and self-service analytics for frontline managers.
+    </div>
+  </div>
+</section>
+
 <section id="impact">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">03 — Selected Impact</span>
+      <span class="eyebrow">04 — Selected Impact</span>
       <h2>Problems, Approach, and What Changed</h2>
     </div>
 
@@ -425,32 +459,6 @@
         <h5>Approach</h5><p>Directed the 0-to-1 build and launch across a matrixed, cross-functional organisation, working directly with clinicians and end users to manage testing and validation of high-assurance data.</p>
         <h5>Impact</h5><p>Launched the platform live across 125+ clinics nationwide — Malaysia's first system of its kind — and was awarded a double promotion for the delivery.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="ai">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">04 — AI Projects</span>
-      <h2>Personally Designed, Built, and Shipped</h2>
-    </div>
-    <div class="ai-grid">
-      <div class="ai-card">
-        <h3>World Cup Predictor</h3>
-        <p>An AI-powered football prediction web app — designed, built and shipped end-to-end: Claude Code for development, Figma Make for generative prototyping, Vercel for deployment. 70+ active users.</p>
-        <div class="tag-row"><span class="tag">Claude Code</span><span class="tag">Figma Make</span><span class="tag">Vercel</span></div>
-        <a class="ai-link" href="https://fwc26-predictor.vercel.app" target="_blank" rel="noopener">Visit Live App →</a>
-      </div>
-      <div class="ai-card">
-        <h3>Calm Chore</h3>
-        <p>A family chore and task-management app, built using LLM-driven workflows and Claude Code — exploring AI-native product design for everyday household routines.</p>
-        <div class="tag-row"><span class="tag">Claude Code</span><span class="tag">LLM Workflows</span><span class="tag">Product Design</span></div>
-        <a class="ai-link" href="https://calm-chore.vercel.app" target="_blank" rel="noopener">Visit Live App →</a>
-      </div>
-    </div>
-    <div class="ai-note">
-      <b>AI in the day job, too:</b> re-engineered 20 years of EF's legacy operational data into a clean, validated, LLM-ready foundation — enabling Salesforce Agentforce / Einstein AI deployment readiness, automated case-routing workflows, and self-service analytics for frontline managers. Uses LLM tools (Claude, ChatGPT, Gemini) for product discovery and rapid prototyping alongside the shipped apps above.
     </div>
   </div>
 </section>
